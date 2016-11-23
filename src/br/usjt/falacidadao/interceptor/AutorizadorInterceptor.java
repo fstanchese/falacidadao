@@ -17,6 +17,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 				|| uri.endsWith("cadastrarusuario") 
 				|| uri.endsWith("finalizarcadastro") 
 				|| uri.endsWith("efetuaLogin") 
+				|| uri.endsWith("menu")
 				|| uri.contains("css") 
 				|| uri.contains("js")
 				|| uri.contains("img")

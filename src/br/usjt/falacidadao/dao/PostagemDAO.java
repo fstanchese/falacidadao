@@ -77,6 +77,16 @@ public class PostagemDAO {
 		Query q = em.createQuery(query);
 		return q.getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Postagem> listarRanking(){
+		em.getTransaction();
+		
+		String query = "select p.usuario from Postagem p group by p.usuario ";
+		Query q12 = em.createQuery(query);
+		System.out.println(q12.getResultList().toString());
+		return q12.getResultList(); 
+	}
 
 
 }

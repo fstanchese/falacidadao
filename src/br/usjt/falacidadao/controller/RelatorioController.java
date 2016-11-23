@@ -26,7 +26,7 @@ public class RelatorioController {
 	@RequestMapping("relatorioranking")
 	public String relatorioranking(Model model,HttpSession session){
 		List<Usuario> listausuario = null; 
-		//TODO
+		ps.listarRanking(); 
 		session.setAttribute("lista", listausuario);
 		
 		return "relatorioranking";		

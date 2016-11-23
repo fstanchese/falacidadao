@@ -6,6 +6,8 @@
 <c:if test="${not empty postagens}">
 <div class="container destaque">
 	<div class="row">
+		<h2 class="lead" style="color:#5bc0de;">Mural de postagens</h2>
+		<hr style="width:300px; margin:0 0 20px!important; !important">	
 		<c:forEach var="postagem" items="${postagens}">
 		<div class="col-md-4 col-sm-6 col-xs-12">
 			<div class="panel panel-default">
@@ -26,7 +28,13 @@
 						</div>
 						<div class="col-xs-6">
 						Veja mais:<br>
+						<c:if test="${empty usuarioLogado}">
+						
+							<a href="javascript:alert('Para ver mais, faça seu login!');" class="btn btn-info btn-sm btn-block" role="button">Abrir</a>
+						</c:if>
+						<c:if test="${not empty usuarioLogado}">							
 							<a href="${path}/postagens/mural/${postagem.id}" class="btn btn-info btn-sm btn-block" role="button">Abrir</a>
+						</c:if>
 						</div>
 					</div>
 				</div>
@@ -38,7 +46,7 @@
 </c:if>
 
 
-<div class="container">
+<div class="container" style="display:none">
 		<div class="panel panel-group">
    		<div class="panel panel-primary">
 			<c:if test="${not empty postagens}">
@@ -65,7 +73,7 @@
 							<td>&nbsp;${postagem.status}</td>
 							<td>&nbsp;${postagem.area.descricao}</td>
 							<td width="12%">
-								<a href="${path}/postagens/mural/${postagem.id}" class="btn btn-warning btn-xs" role="button">Abrir</a>
+								<a href="${path}/postagem/${postagem.id}" class="btn btn-warning btn-xs" role="button">Abrir</a>
 							</td>
 						</tr>
 					</c:forEach>

@@ -56,5 +56,9 @@ public class PostagemService {
 	public List<Postagem> listarMural() {
 		return daoPostagem.listarMural();
 	}
+	
+	public List<Postagem> listarRanking() {
+		return daoPostagem.listarRanking();  
+	}
 
 }

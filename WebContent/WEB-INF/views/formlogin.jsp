@@ -19,27 +19,31 @@
 	<c:import url="cabecalho.jsp" />
 	<c:import url="banner.jsp" />
 	<div class="container login pdt">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<form action="${path}/efetuaLogin" method="post">
-					<div class="panel-heading">Fala Cidadão - Login</div>
-
-					<div class="form-group">
-						<label for="login">Login</label> <input id="login" name="login"
-							size=50 class="form-control" required>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<form action="${path}/efetuaLogin" method="post">
+							<div class="panel-heading">Fala Cidadão - Login</div>
+		
+							<div class="form-group">
+								<label for="login">Login</label> <input id="login" name="login"
+									size=50 class="form-control" required>
+							</div>
+							<div class="form-group">
+		
+								<label for="senha">Senha</label> <input type="password" id="senha"
+									name="senha" class="form-control" required>
+							</div>
+							<div class="form-group">
+								<button id="btn-login" class="btn btn-success">Entrar</button>
+							</div>
+		
+		
+		
+						</form>
 					</div>
-					<div class="form-group">
-
-						<label for="senha">Senha</label> <input type="password" id="senha"
-							name="senha" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<button id="btn-login" class="btn btn-success">Entrar</button>
-					</div>
-
-
-
-				</form>
+				</div>
 			</div>
 		</div>
 	</div>

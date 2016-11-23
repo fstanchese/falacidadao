@@ -9,7 +9,7 @@
 					<span class="sr-only">Menu de navegação</span> <span
 						class="glyphicon glyphicon-menu-hamburger"> </span>
 				</button>
-				<a class="navbar-brand" href="#"></a>
+				<a class="navbar-brand" href="menu"></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="menu">

@@ -1,53 +1,37 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<style type="text/css">
+<c:import url="config.jsp"/>
 <c:set var="path" value="${pageContext.request.contextPath}" scope="request"/>
-@IMPORT url("${path}/resources/css/bootstrap.min.css");
-
-@IMPORT url("${path}/resources/css/bootstrap-theme.min.css");
-
-@IMPORT url("${path}/resources/css/custom.css");
-
-@IMPORT url("${path}/resources/css/style.css");
-</style>
-<script src="${path}/resources/js/jquery.min.js" type="text/javascript"></script>
-
 <meta charset="UTF-8">
 <title>Alterar Dados</title>
 </head>
 <body>
 	<c:import url="cabecalho.jsp" />
 	<c:if test="${not empty usuarioLogado}">
-
-		<form class="form-horizontal">
-			<div class="form-group">
-				<label class="control-label col-sm-2">Consultar
-					ranking geral de participação por cidadão.</label>
-				<div class="col-sm-10">
-					<a href="relatorioranking"><input type="button" value="Gerar relatorio" /></a>
-				</div>
+	<div class="container pdt relatorios text-center">
+		<div class="row">
+			<div class="col-xs-12">
+				<p class="alert alert-info">
+					Relatórios informativos de entrada de dados no sistema
+				</p>
 			</div>
-			
-			<div class="form-group">
-				<label class="control-label col-sm-2">Consultar ranking de sugestões aprovadas para postagem por categoria.</label>
-				<div class="col-sm-10">
-					<a href="relatoriocategoria"><input type="button" value="Gerar relatorio" /></a>
-				</div>
+			<div class="col-sm-4 col-xs-12">
+				<p>Consultar ranking geral de participação por cidadão.</p>
+				<a href="relatorioranking" class="btn btn-info btn-block">Gerar relatório</a>
 			</div>
-			
-			<div class="form-group">
-				<label class="control-label col-sm-2"> Ranking de sugestões enviadas, avaliadas e índice de devolutiva por avaliador.</label>
-				<div class="col-sm-10">
-					<a href="relatoriodevolutivas"><input type="button" value="Gerar relatorio" /></a>
-				</div>
+			<div class="col-sm-4 col-xs-12">
+				<p>Consultar ranking de sugestões aprovadas para postagem por categoria</p>
+				<a href="relatoriocategoria" class="btn btn-info btn-block">Gerar relatório</a>
 			</div>
-		</form>
-
-
+			<div class="col-sm-4 col-xs-12">
+				<p>Ranking de sugestões enviadas, avaliadas e índice de devolutiva por avaliador</p>
+				<a href="relatoriodevolutivas" class="btn btn-info btn-block">Gerar relatório</a>
+			</div>
+		</div>
+	</div>
 	</c:if>
-	<script src="resources/js/jquery.min.js" type="text/javascript"></script>
-	<script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
+<c:import url="footer.jsp" />
 </body>
 </html>
 

@@ -28,7 +28,7 @@
 	});
 </script>
 <c:import url="../cabecalho.jsp" />
-<div class="container">
+<div class="container pdt">
 	<form:form commandName="postagem" class="form-horizontal" action="${path}/postagens/crudPostagem" method="post" enctype="multipart/form-data">
 	<form:input path="id" type="hidden"/>
 	<form:input path="imagem" type="hidden"/>
