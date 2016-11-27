@@ -34,6 +34,8 @@ public class Area implements Serializable {
 	@Column(name="descricao",length=100,nullable=false)
 	private String descricao;
 
+	private String contador;
+	
 	public Long getId() {
 		return id;
 	}
@@ -50,6 +52,16 @@ public class Area implements Serializable {
 		this.descricao = descricao;
 	}
 
+	
+	
+	public String getContador() {
+		return contador;
+	}
+
+	public void setContador(String contador) {
+		this.contador = contador;
+	}
+
 	@Override
 	public String toString() {
 		return "Area [id=" + id + ", descricao=" + descricao + "]";
@@ -59,6 +71,7 @@ public class Area implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((contador == null) ? 0 : contador.hashCode());
 		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
@@ -73,6 +86,11 @@ public class Area implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Area other = (Area) obj;
+		if (contador == null) {
+			if (other.contador != null)
+				return false;
+		} else if (!contador.equals(other.contador))
+			return false;
 		if (descricao == null) {
 			if (other.descricao != null)
 				return false;
@@ -85,5 +103,7 @@ public class Area implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 	
 }

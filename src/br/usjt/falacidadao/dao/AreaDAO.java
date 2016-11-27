@@ -29,6 +29,6 @@ public class AreaDAO {
 
 	@SuppressWarnings("unchecked")
 	public List<Area> listar() {
-		return em.createQuery("select a from Area a order by a.descricao").getResultList();
+		return em.createQuery("select a from Area a order by a.id").getResultList();
 	}
 }

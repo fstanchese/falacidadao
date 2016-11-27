@@ -72,6 +72,16 @@ public class Postagem implements Serializable {
 	transient String comentario;
 	transient String mural;
 	
+	private String contador;
+	
+	public String getContador() {
+		return contador;
+	}
+
+	public void setContador(String contador) {
+		this.contador = contador;
+	}
+
 	public Long getId() {
 		return id;
 	}

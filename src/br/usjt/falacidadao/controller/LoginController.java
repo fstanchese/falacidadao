@@ -23,7 +23,12 @@ public class LoginController {
 		this.servicePostagem = servicePostagem;
 	}
 
-	@RequestMapping(value={"loginForm","","index","home"})
+	@RequestMapping(value={"index","home","/"})
+	public String index() {
+		return "menuPrincipal";
+	}
+	
+	@RequestMapping(value={"loginForm"})
 	public String loginForm() {
 		return "formlogin";
 	}

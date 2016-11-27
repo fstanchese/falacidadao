@@ -57,8 +57,46 @@ public class PostagemService {
 		return daoPostagem.listarMural();
 	}
 	
-	public List<Postagem> listarRanking() {
+	public List<Usuario> listarRanking() {
 		return daoPostagem.listarRanking();  
 	}
+
+	public List<Postagem> listarqntdsugestao() {
+		return daoPostagem.listarQuantidadeSugestao();
+	}
+
+	public List<Postagem> listarqntstatusandid(String status, Long id) {
+		return daoPostagem.listarqntstatusandid(status,id);
+	}
+
+	public List<Postagem> listarporarea(Long id) {
+		return daoPostagem.listarporarea(id);
+	}
+
+	public List<Postagem> quantidadetotalpostagens() {
+		// TODO Auto-generated method stub
+		return daoPostagem.listarquantidadetotalpostagens();
+	}
+
+	public List<Area> listartudoporarea() {
+		return daoPostagem.listartudoporarea();
+	}
+
+	public List<Postagem> listarporareaid() {
+		return daoPostagem.listarporareaid();
+	}
+
+	public List<Postagem> listarQuantidadeArea() {
+		return daoPostagem.listarQuantidadeArea();
+	}
+
+	public List<Postagem> listarquantidadetotalpostagens() {
+		return daoPostagem.listarquantidadetotalpostagens();
+	}
+
+	public List<Postagem> pegardevolutivas(Long id) {
+		return daoPostagem.pegardevolutivas(id);
+	}
+
 
 }

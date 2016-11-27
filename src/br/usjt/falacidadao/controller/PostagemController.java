@@ -177,8 +177,7 @@ public class PostagemController {
 	@RequestMapping(value = "/imageDisplay", method = RequestMethod.GET)
 	public void showImage(@RequestParam("id") Long id, HttpServletResponse response, HttpServletRequest request)
 			throws ServletException, IOException {
-
-		if (id > 0) {
+		if ( id != null) {
 			Postagem postagem = servicePostagem.buscaPorId(id);
 			response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
 			response.getOutputStream().write(postagem.getImagem());

@@ -10,15 +10,15 @@
 		<hr style="width:300px; margin:0 0 20px!important; !important">	
 		<c:forEach var="postagem" items="${postagens}">
 		<div class="col-md-4 col-sm-6 col-xs-12">
-			<div class="panel panel-default">
+			<div class="panel panel-default" >
 				<div class="panel-heading">
-					Protocolo ${postagem.id}
+					Protocolo 000${postagem.id}
 				</div>
 				<div class="panel-body">
 					<p>${fn:substring(postagem.descricao,0,80)}...</p>
 					
 				</div>
-				<div class="panel-footer text-center">
+				<div class="panel-footer text-center" style="min-height:170px">
 					<div class="row">
 						<div class="col-xs-12">Criado em: <fmt:formatDate value="${postagem.dataSugestao}" pattern="dd/MM/yyyy HH:mm:ss" /></div>
 						<br>
@@ -27,14 +27,7 @@
 							${postagem.status}
 						</div>
 						<div class="col-xs-6">
-						Veja mais:<br>
-						<c:if test="${empty usuarioLogado}">
-						
-							<a href="javascript:alert('Para ver mais, faça seu login!');" class="btn btn-info btn-sm btn-block" role="button">Abrir</a>
-						</c:if>
-						<c:if test="${not empty usuarioLogado}">							
-							<a href="${path}/postagens/mural/${postagem.id}" class="btn btn-info btn-sm btn-block" role="button">Abrir</a>
-						</c:if>
+							<img style="margin:0 auto; max-width:110px;height:50px" class="img-responsive img-rounded"  src='${pageContext.request.contextPath}/postagens/imageDisplay?id=${postagem.id}' />
 						</div>
 					</div>
 				</div>

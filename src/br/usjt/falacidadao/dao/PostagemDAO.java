@@ -79,14 +79,61 @@ public class PostagemDAO {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Postagem> listarRanking(){
-		em.getTransaction();
-		
+	public List<Usuario> listarRanking(){
 		String query = "select p.usuario from Postagem p group by p.usuario ";
 		Query q12 = em.createQuery(query);
-		System.out.println(q12.getResultList().toString());
 		return q12.getResultList(); 
 	}
 
+	public List<Postagem> listarQuantidadeSugestao() {
+		String query = "select count(p.usuario.id) from Postagem p group by p.usuario.id";
+		Query q111 = em.createQuery(query);
+		return q111.getResultList(); 
+	}
 
+	public List<Postagem> listarqntstatusandid(String status, Long id) {
+		String query = "select count(p.status) from Postagem p WHERE p.status = :status and p.usuario.id = :id group by p.status";
+		Query q111 = em.createQuery(query);
+		q111.setParameter("status", Status.valueOf(status));
+		q111.setParameter("id", id);
+		return q111.getResultList(); 
+	}
+
+	public List<Postagem> listarporarea(Long id) {
+		String query = "select count(p.area.id) from Postagem p where p.status = 'ABERTO' and p.area.id = :id group by p.area.id";
+		Query q111 = em.createQuery(query);
+		q111.setParameter("id", id);
+		return q111.getResultList(); 
+	}
+
+	public List<Postagem> listarquantidadetotalpostagens() {
+		String query = "select count(p.id) from Postagem p";
+		Query q111 = em.createQuery(query);
+		return q111.getResultList(); 
+	}
+
+	public List<Area> listartudoporarea() {
+		String query = " select p.area.id from Postagem p group by p.area.id";
+		Query q111 = em.createQuery(query);
+		return q111.getResultList(); 
+	}
+
+	public List<Postagem> listarporareaid() {
+		String query = "select p from Postagem p";
+		Query q111 = em.createQuery(query);
+		return q111.getResultList(); 
+	}
+	
+	public List<Postagem> listarQuantidadeArea() {
+		String query = "select count(p.area.id) from Postagem p group by p.area.id";
+		Query q111 = em.createQuery(query);
+		return q111.getResultList(); 
+	}
+
+	public List<Postagem> pegardevolutivas(Long id) {
+		String query =  "select count(p.status) from Postagem p  where p.status = 'FECHADO' AND p.area.id = :id";
+		Query q111 = em.createQuery(query);
+		q111.setParameter("id", id);
+		return q111.getResultList(); 
+	}
 }
